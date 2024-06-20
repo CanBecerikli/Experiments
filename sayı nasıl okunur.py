@@ -39,21 +39,21 @@ def main():
     "tricintilyon",
     "antricintilyon",
     ]
-    def oku(li):
+    def read(li):
         if len(li)==3:
             return yüzler[int(li[2])]+" "+onlar[int(li[1])]+" "+birler[int(li[0])]
         elif len(li)==2:
             return onlar[int(li[1])] + " " + birler[int(li[0])]
         elif len(li)==1:
             return birler[int(li[0])]
-    def kontrol(grup,küme=""):
+    def control(grup,küme=""):
         try:
             if grup[1]=="0" and grup[2]=="0" and grup[0]=="0":
                 return ""
             else:
-                return oku(grup) +" "+ küme
+                return read(grup) +" "+ küme
         except:
-            return oku(grup) +" "+ küme
+            return read(grup) +" "+ küme
     while True:
         try:
             h=input("sayı: ")
@@ -66,11 +66,11 @@ def main():
             a=2
             for i in li:
                 if len(u)==3:
-                    lo.append(kontrol(u,canımsıkıldı[a]))
+                    lo.append(control(u,canımsıkıldı[a]))
                     u=[]
                     a+=1
                 u.append(i)
-            lo.append(kontrol(u,canımsıkıldı[a]))
+            lo.append(control(u,canımsıkıldı[a]))
             lo==lo.reverse()
             r=""
             for i in lo:
@@ -78,12 +78,9 @@ def main():
                 r+=" "
             print(r)
         except IndexError:
-            print("Henüz bu basamakta bir sayıyı okuyamıyorum, Lütfen abartmayın anasını satayım")
+            print("Henüz bu basamakta bir sayıyı okuyamıyorum, Lütfen abartmayın")
         except ValueError:
             print("yazdığın sayının içinde 'sayı' olmayan bir şeyler var. Onları düzelt tekrar yaz")
 
 if __name__ == "__main__":
     main()
-
-    
-    
