@@ -32,7 +32,6 @@ def main():
     v_box.addStretch()  # Vertical stretch space
     v_box.addWidget(za)  # Adding message label
     v_box.addStretch()  # Vertical stretch space
-    v_box.addStretch()  # Vertical stretch space
     v_box.addWidget(ziku)  # Adding the zikir button
 
     # Adding vertical layout to the horizontal layout
