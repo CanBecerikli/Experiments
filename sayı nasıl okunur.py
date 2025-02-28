@@ -39,6 +39,7 @@ def main():
     "tricintilyon",
     "antricintilyon",
     ]
+    
     def read(li):
         if len(li)==3:
             return yüzler[int(li[2])]+" "+onlar[int(li[1])]+" "+birler[int(li[0])]
