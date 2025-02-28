@@ -2,6 +2,7 @@ import os
 
 def bul(dizin):
     textler = []  # txt dosyalarını burada toplayacağız
+    
     try:
         for i in os.listdir(dizin):
             tam_yol = os.path.join(dizin, i)
