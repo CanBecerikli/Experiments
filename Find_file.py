@@ -7,10 +7,9 @@ def bul(dizin):
             tam_yol = os.path.join(dizin, i)
 
             if i.endswith(".txt"):
-                textler.append(i) # txt dosyasını listeye ekliyoruz (eğer yol olarak eklemek isterseniz *tam_yol* değişkenini ekleyebilirsiniz)
+                textler.append(tam_yol) # txt dosyasını listeye ekliyoruz (eğer yol olarak eklemek isterseniz *tam_yol* değişkenini ekleyebilirsiniz)
 
             elif os.path.isdir(tam_yol):
-                print(f"Yeni dizin: {tam_yol}")
                 textler.extend(bul(tam_yol))  # Recursive olarak alt klasörleri de tarıyoruz
 
     except Exception as e:
@@ -18,7 +17,7 @@ def bul(dizin):
     return textler
 
 def main():
-    b = r"D:\desktopii"  # Ana dizini belirle (r: raw string), (dilediğiniz bir dizin olabilir, dilerseniz tüm diskleri tarayabilirsiniz)  
+    b = r"D:/"  # Ana dizini belirle (r: raw string), (dilediğiniz bir dizin olabilir, dilerseniz tüm diskleri tarayabilirsiniz)  
     a=bul(b)
     print("########################-------BULUNAN-DOSYALAR---------##############################")
     for i in a: # .txt dosyalarını bul
