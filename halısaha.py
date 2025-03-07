@@ -24,14 +24,14 @@ def dağıtım(power,g1,g2):
 
 def main():
     while True:
-            on=["Messi","Ronaldo","Fenomeno"]
-            dokuz=["Alex de souza","Hagi","dybala","Khan","casillas"]
-            sekiz=["De bruyne","Özil","Müllere"]
-            yedi=["Cengiz","Toreira"]
-            altı=[""]
-            beş=["ERGÜN","FARUK","MEHMET","BAKI"]
-            dört=["SERHAT"]
-            üç=["EMİRYİĞİT"]
+            on=["Messi","Ronaldo","Fenomeno","Neymar"]
+            dokuz=["Khan","casillas"]
+            sekiz=["De bruyne","Özil","Müllere","maldini"]
+            yedi=["Alex","Haigi","Kaka","Pirlo"]
+            altı=["Arda güler","arda turna"]
+            beş=["abdulekro","yavuz","gökhan","emre"]
+            dört=["aliko.","dursun"]
+            üç=[]
             iki=[]
             bir=[]
             takım1=[]
