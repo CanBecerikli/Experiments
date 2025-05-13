@@ -2,12 +2,11 @@ import os
 
 def bul(dizin):
     textler = []  # txt dosyalarını burada toplayacağız
-    
     try:
         for i in os.listdir(dizin):
             tam_yol = os.path.join(dizin, i)
 
-            if i.endswith(".txt"):
+            if i.endswith(".vml"):
                 textler.append(tam_yol) # txt dosyasını listeye ekliyoruz (eğer yol olarak eklemek isterseniz *tam_yol* değişkenini ekleyebilirsiniz)
 
             elif os.path.isdir(tam_yol):
@@ -18,7 +17,7 @@ def bul(dizin):
     return textler
 
 def main():
-    b = r"D:/"  # Ana dizini belirle (r: raw string), (dilediğiniz bir dizin olabilir, dilerseniz tüm diskleri tarayabilirsiniz)  
+    b = "C:\Program Files"  # Ana dizini belirle (r: raw string), (dilediğiniz bir dizin olabilir, dilerseniz tüm diskleri tarayabilirsiniz)  
     a=bul(b)
     print("########################-------BULUNAN-DOSYALAR---------##############################")
     for i in a: # .txt dosyalarını bul
