@@ -6,7 +6,7 @@ def bul(dizin):
         for i in os.listdir(dizin):
             tam_yol = os.path.join(dizin, i)
 
-            if i.endswith(".vml"):
+            if i.endswith(".txt"):
                 textler.append(tam_yol) # txt dosyasını listeye ekliyoruz (eğer yol olarak eklemek isterseniz *tam_yol* değişkenini ekleyebilirsiniz)
 
             elif os.path.isdir(tam_yol):

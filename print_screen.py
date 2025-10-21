@@ -1,5 +1,5 @@
 import time as t
-a = "NİLDA NE OLURSUN ÇOK YORULDUM BIRAK YATAYIM LOO"
+a = "MUHAMMET NABER LO"
 b= [" ","A","B","C","Ç","D","E","F","G","H","I","İ","J","K","L","M","N""","O","P","Q","R","S","T","U","V","W","X","Y","Z",]
 z=""
 for i in a:
