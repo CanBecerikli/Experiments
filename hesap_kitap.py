@@ -1,68 +1,52 @@
-# I just bored, ı need this basic thing and I had time
-def kisi():
-    lis=[]
-    a=int(input("Kaç Kişi Gezdiniz: "))
-    for i in range(a):
-        b=input("{}. kişi: ".format(i+1))
-        lis.append(b)
-    return lis
-
-def para(l):
-    mo=[]
-    for i in l:
-        b=float(input("{} Ne kadar harcadı: ".format(i)))
-        mo.append(b)
-    return mo
-
+# I just bored, I need this basic thing and I had time
+def hesap():
+    try:
+        lis=[]
+        a=int(input("Kaç Kişi Gezdiniz: "))
+        for i in range(a):
+            b=input("{}. kişi: ".format(i+1))
+            c=float(input(f"{b} ne kadar harcama yaptı: "))
+            lis.append({"isim":b,
+                        "harcama" : c,
+                        "bakiye":0})
+        return lis
+    except:
+        
+#isim, ödenen, bakiye
 def main():
-    Bakiye=[]
-    isim=kisi()
-    harcanan=para(isim)
-    s=sum(harcanan)/len(isim) #money for every people 
-    for i in range(len(isim)):
-        Bakiye.append(harcanan[i]-s)
-
-    for borclu in range(len(isim)):
-        if Bakiye[borclu]<0:
-            for alacak in range(len(isim)):
-                if alacak==borclu:
-                    continue
-                if Bakiye[alacak]>0:
-                    d=Bakiye[borclu]
-                    f=Bakiye[alacak]
-                    if (d*-1)>f:
-                        d+=f
-                        print("{}----> {}, {} TL verecek".format(isim[borclu],isim[alacak],f))
-                        Bakiye[borclu]=d
-                        Bakiye[alacak]=0
-                    else:
-                        f+=d
-                        Bakiye[borclu]=0
-                        Bakiye[alacak]=f
-                        print("{}----> {}, {} TL verecek".format(isim[borclu],isim[alacak],d*-1))
-                        print("{} tüm borcunu verdi borcu kalmadı".format(isim[borclu]))
-                        break
-            print("------------------------------")
-                
-
-    print("---------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx---------------")
-
-    
-""" for list not sure
-    for i in range(len(isim)):
-        print("--------------------------------")
-        if Bakiye[i]>0:
-            print(isim[i],Bakiye[i]," TL Alacak")
-        elif Bakiye[i]==0:
-            print(isim[i]," Tam ödeme yapmış alacak verecek yok")
-        else:
-            print(isim[i],Bakiye[i]*-1," TL Verecek")
-    print("--------------------------------")
-"""
+    bilgi=hesap()
+    if len(bilgi)==0:
+        print("gezi yok, perogram sonlandırılıyor...")
+    else:
+        s=sum(i["harcama"] for i in bilgi)/len(bilgi) #money for every people 
+        for i in bilgi:
+            i["bakiye"] = i["harcama"]-s
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        for borclu in bilgi:
+            if borclu["bakiye"]<0:
+                print("--------------------------------------------")
+                for alacak in bilgi:
+                    if alacak==borclu:continue
+                    if alacak["bakiye"]>0:
+                        borc_bakiye=borclu["bakiye"]
+                        alacak_bakiye=alacak["bakiye"]
+                        if (borc_bakiye*-1)>alacak_bakiye:
+                            borc_bakiye+=alacak_bakiye
+                            print("{}----> {}, {} TL verecek".format(borclu["isim"],alacak["isim"],alacak_bakiye))
+                            borclu["bakiye"]=borc_bakiye
+                            alacak["bakiye"]=0
+                        else:
+                            alacak_bakiye+=borc_bakiye
+                            borclu["bakiye"]=0
+                            alacak["bakiye"]=alacak_bakiye
+                            print("{}----> {}, {} TL verecek".format(borclu["isim"],alacak["isim"],borc_bakiye*-1))
+                            print("{} tüm borcunu verdi borcu kalmadı".format(borclu["isim"]))
+                            break
 
 if __name__=="__main__":
     while True:
         main()
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
         if "q"==input("Tekrar için enter çıkış için q"):
             break
 
