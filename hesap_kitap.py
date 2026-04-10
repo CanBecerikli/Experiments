@@ -11,7 +11,7 @@ def hesap():
                         "bakiye":0})
         return lis
     except:
-        
+        print("lüfen kişi sayısını ve mikktarları doğru formatta giriniz :)")
 #isim, ödenen, bakiye
 def main():
     bilgi=hesap()
